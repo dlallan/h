@@ -117,7 +117,12 @@ def scrape_profile(output_file):
     if len(queue_profiles) == 0 or random.random() < 0.01:
         scrape_movie()
         time.sleep(sleep_time)
-    user = heapq.heappop(queue_profiles)[1]
+    try:
+        user = heapq.heappop(queue_profiles)[1]
+    except:
+        print(queue_profiles)
+        print(heapq.heappop(queue_profiles))
+        return
     response = requests.get(url_base+user, headers=headers)
     root = pq(response.text)
     add_card_rows(root,output_file,user)
