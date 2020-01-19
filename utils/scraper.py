@@ -42,9 +42,9 @@ def scrape_movie():
     add_user_names(root)
     for i in range(more_users_depth):
         root = get_more_users(root)
-        add_user_names(root)
         if root is None:
             break
+        add_user_names(root)
 
 def add_user_names(root):
     likes_div = root('.tk-User-link')
