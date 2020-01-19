@@ -30,7 +30,6 @@ done_profiles = set()
 done_movies = set(['Avengers-Endgame'])
 
 queue_profiles = []
-heapq.heappush(queue_profiles, (0,'%CE%92%CE%B1%CE%BB%CE%AD%CF%81%CE%B9%CE%B1%20%CE%A3%CF%80'))
 
 queue_movies = []
 heapq.heappush(queue_movies, (0,'Avengers-Endgame'))
@@ -140,8 +139,6 @@ def scrape_profile(output_file):
             more_root = get_more_titles(more_root)
 
     flush(output_file)
-
-    print('t') 
 
 def flush(file):
     file.flush()
